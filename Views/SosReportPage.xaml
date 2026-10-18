@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlerteViolence.Views.SosReportPage"
+             BackgroundColor="{StaticResource BackgroundDark}"
+             xmlns:vm="clr-namespace:AlerteViolence.ViewModels"
+             x:DataType="vm:SosReportViewModel"
+             Title="SOS">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="24">
+
+            <!-- En-tête de bienvenue (Pop-up_Login de la maquette) -->
+            <VerticalStackLayout Spacing="8" Margin="0,16,0,24">
+                <Label Text="Hello! Jeremy Medou"
+                       Style="{StaticResource TitrePage}"
+                       Margin="0"/>
+                <Label Text="Get the Best Assistance"
+                       Style="{StaticResource SousTitre}"
+                       Margin="0"/>
+                <Label Text="Without security, everything else becomes secondary."
+                       FontSize="14"
+                       TextColor="{StaticResource TextSecondary}"
+                       LineBreakMode="WordWrap"/>
+            </VerticalStackLayout>
+
+            <!-- Section Quick Report -->
+            <Label Text="Quick report"
+                   Style="{StaticResource SousTitre}"
+                   Margin="0,16,0,16"/>
+
+            <Frame BackgroundColor="{StaticResource SurfaceDark}"
+                   CornerRadius="8"
+                   Padding="16"
+                   HasShadow="False">
+
+                <VerticalStackLayout Spacing="16">
+
+                    <!-- Champ Type de rapport -->
+                    <Entry Placeholder="Enter the type of report"
+                           Text="{Binding TypeRapport}"
+                           TextColor="{StaticResource TextPrimary}"
+                           PlaceholderColor="{StaticResource TextSecondary}"
+                           BackgroundColor="{StaticResource BackgroundDark}"
+                           HeightRequest="48"/>
+
+                    <!-- Picker Statut -->
+                    <Picker Title="Victim or witness"
+                            ItemsSource="{Binding Statuts}"
+                            SelectedItem="{Binding StatutSelectionne}"
+                            TextColor="{StaticResource TextPrimary}"
+                            TitleColor="{StaticResource TextSecondary}"
+                            BackgroundColor="{StaticResource BackgroundDark}"
+                            HeightRequest="48"/>
+
+                    <!-- Bouton Submit -->
+                    <Button Text="Submit"
+                            Command="{Binding SubmitCommand}"
+                            BackgroundColor="{StaticResource PrimaryRed}"
+                            TextColor="White"
+                            FontFamily="InstrumentSansSemiBold"
+                            FontSize="16"
+                            HeightRequest="48"
+                            CornerRadius="8"
+                            Margin="0,8,0,0"/>
+
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

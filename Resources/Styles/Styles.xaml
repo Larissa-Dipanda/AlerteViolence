@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Typographie (Instrument Sans pour le corps, Istok Web pour les titres) -->
+    <Style TargetType="Label">
+        <Setter Property="FontFamily" Value="InstrumentSansRegular" />
+        <Setter Property="TextColor" Value="{StaticResource TextPrimary}" />
+    </Style>
+
+    <Style x:Key="TitrePage" TargetType="Label">
+        <Setter Property="FontFamily" Value="IstokWebBold" />
+        <Setter Property="FontSize" Value="24" />
+        <!-- Multiple de 8 -->
+        <Setter Property="Margin" Value="0,0,0,16" />
+        <!-- 2 x 8px -->
+        <Setter Property="TextColor" Value="{StaticResource TextPrimary}" />
+    </Style>
+
+    <Style x:Key="SousTitre" TargetType="Label">
+        <Setter Property="FontFamily" Value="IstokWebRegular" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Margin" Value="0,0,0,8" />
+        <Setter Property="TextColor" Value="{StaticResource PrimaryYellow}" />
+    </Style>
+
+    <!-- Boutons (Zones tactiles min 48px = Padding 16 + Hauteur 32) -->
+    <Style TargetType="Button">
+        <Setter Property="FontFamily" Value="InstrumentSansSemiBold" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="HeightRequest" Value="48" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Padding" Value="16,8" />
+        <Setter Property="BackgroundColor" Value="{StaticResource PrimaryGreen}" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+
+    <Style x:Key="BoutonAlerte" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource PrimaryRed}" />
+        <Setter Property="HeightRequest" Value="64" />
+        <!-- Plus grand pour l'urgence -->
+        <Setter Property="FontSize" Value="20" />
+    </Style>
+
+</ResourceDictionary>

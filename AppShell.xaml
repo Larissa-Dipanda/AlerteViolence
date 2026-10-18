@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="AlerteViolence.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:AlerteViolence.Views"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False"
+    Title="AlerteViolence">
+
+    <!-- 1. La première page du Shell est maintenant EntryPage -->
+    <ShellContent Route="EntryPage" ContentTemplate="{DataTemplate views:EntryPage}" />
+
+    <!-- 2. Les autres pages d'authentification (Routes globales) -->
+    <ShellContent Route="LoginPage" ContentTemplate="{DataTemplate views:LoginPage}" />
+    <ShellContent Route="SignUpPage" ContentTemplate="{DataTemplate views:SignUpPage}" />
+
+    <!-- 3. La TabBar principale -->
+    <TabBar Route="MainTabBar">
+        <Tab Title="SOS">
+            <ShellContent ContentTemplate="{DataTemplate views:SosReportPage}" Route="SosReportPage" />
+        </Tab>
+        <Tab Title="Contacts">
+            <ShellContent ContentTemplate="{DataTemplate views:EmergencyContactsPage}" Route="EmergencyContactsPage" />
+        </Tab>
+        <Tab Title="Support">
+            <ShellContent ContentTemplate="{DataTemplate views:SupportServicesPage}" Route="SupportServicesPage" />
+        </Tab>
+        <Tab Title="Rights">
+            <ShellContent ContentTemplate="{DataTemplate views:RightsPage}" Route="RightsPage" />
+        </Tab>
+        <Tab Title="Logs">
+            <ShellContent ContentTemplate="{DataTemplate views:ReportHistoryPage}" Route="ReportHistoryPage" />
+        </Tab>
+    </TabBar>
+
+</Shell>

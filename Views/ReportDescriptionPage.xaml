@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlerteViolence.Views.ReportDescriptionPage"
+             xmlns:vm="clr-namespace:AlerteViolence.ViewModels"
+             x:DataType="vm:ReportDescriptionViewModel"
+             BackgroundColor="{StaticResource BackgroundDark}"
+             Title="Report Description">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="24">
+
+            <!-- Date -->
+            <VerticalStackLayout Spacing="8">
+                <Label Text="Date:" 
+                       FontFamily="InstrumentSansSemiBold" 
+                       FontSize="14" 
+                       TextColor="{StaticResource TextSecondary}"/>
+                <Label Text="{Binding DateRapport}" 
+                       FontFamily="IstokWebBold" 
+                       FontSize="18" 
+                       TextColor="{StaticResource TextPrimary}"/>
+            </VerticalStackLayout>
+
+            <!-- Status -->
+            <VerticalStackLayout Spacing="8">
+                <Label Text="Status:" 
+                       FontFamily="InstrumentSansSemiBold" 
+                       FontSize="14" 
+                       TextColor="{StaticResource TextSecondary}"/>
+                <Picker ItemsSource="{Binding Statuts}"
+                        SelectedItem="{Binding StatutSelectionne}"
+                        TextColor="{StaticResource TextPrimary}"
+                        BackgroundColor="{StaticResource SurfaceDark}"
+                        HeightRequest="48"/>
+            </VerticalStackLayout>
+
+            <!-- Description -->
+            <VerticalStackLayout Spacing="8">
+                <Label Text="Description:" 
+                       FontFamily="InstrumentSansSemiBold" 
+                       FontSize="14" 
+                       TextColor="{StaticResource TextSecondary}"/>
+                <Editor Text="{Binding Description}"
+                        Placeholder="Describe the situation..."
+                        TextColor="{StaticResource TextPrimary}"
+                        PlaceholderColor="{StaticResource TextSecondary}"
+                        BackgroundColor="{StaticResource SurfaceDark}"
+                        HeightRequest="160"
+                        AutoSize="TextChanges"/>
+            </VerticalStackLayout>
+
+            <!-- Bouton Save -->
+            <Button Text="Save"
+                    Command="{Binding SaveCommand}"
+                    BackgroundColor="{StaticResource PrimaryRed}"
+                    TextColor="White"
+                    FontFamily="InstrumentSansSemiBold"
+                    FontSize="16"
+                    HeightRequest="48"
+                    CornerRadius="8"
+                    Margin="0,16,0,0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

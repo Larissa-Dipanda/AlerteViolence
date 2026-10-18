@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlerteViolence.Views.ReportHistoryPage"
+             BackgroundColor="{StaticResource BackgroundDark}"
+             Title="Logs">
+    <Grid RowDefinitions="*, Auto">
+        <ScrollView Grid.Row="0" Padding="16">
+            <VerticalStackLayout Spacing="12">
+                <Label Text="Report History" FontSize="24" TextColor="White" FontAttributes="Bold" Margin="0,16,0,24"/>
+
+                <!-- Exemple d'item d'historique -->
+                <Frame BackgroundColor="#1E1E1E" CornerRadius="8" Padding="16" BorderColor="#333333">
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnReportTapped"/>
+                    </Frame.GestureRecognizers>
+                    <Grid ColumnDefinitions="*, Auto" ColumnSpacing="16">
+                        <VerticalStackLayout Grid.Column="0" Spacing="4">
+                            <Label Text="12/06/2026" FontSize="12" TextColor="Gray"/>
+                            <Label Text="Domestic violence" FontSize="16" TextColor="White" FontAttributes="Bold"/>
+                            <Label Text="Status: Victim" FontSize="14" TextColor="{StaticResource PrimaryRed}"/>
+                        </VerticalStackLayout>
+                        <Label Grid.Column="1" Text="" FontSize="24" VerticalOptions="Center"/>
+                    </Grid>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
+
+        <!-- Bouton Quick Delete en bas -->
+        <Button Grid.Row="1" Text="Quick Delete" Clicked="OnQuickDeleteClicked" BackgroundColor="{StaticResource PrimaryRed}" TextColor="White" Margin="16,0,16,16" HeightRequest="48"/>
+    </Grid>
+</ContentPage>

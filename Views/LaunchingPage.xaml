@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlerteViolence.Views.LaunchingPage"
+             BackgroundColor="{StaticResource PrimaryRed}">
+
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="24">
+        <!-- Icône temporaire (remplace par ton image plus tard) -->
+        <Label Text="🛡️" FontSize="64" HorizontalOptions="Center"/>
+
+        <Label Text="ALERTE VIOLENCE" 
+               FontSize="24" 
+               TextColor="White" 
+               FontAttributes="Bold" 
+               HorizontalOptions="Center"/>
+
+        <ActivityIndicator IsRunning="True" Color="White" Margin="0,32,0,0"/>
+    </VerticalStackLayout>
+</ContentPage>

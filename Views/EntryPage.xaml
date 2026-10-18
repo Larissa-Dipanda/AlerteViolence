@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlerteViolence.Views.EntryPage"
+             BackgroundColor="{StaticResource PrimaryRed}">
+
+    <VerticalStackLayout Padding="32" Spacing="24" VerticalOptions="Center" HorizontalOptions="Center">
+
+        <Label Text="You are secured!" 
+               FontSize="32" 
+               TextColor="White" 
+               FontAttributes="Bold" 
+               HorizontalTextAlignment="Center" 
+               Margin="0,0,0,16"/>
+
+        <Label Text="Feel secured to report whatever you went through or witnessed!" 
+               FontSize="16" 
+               TextColor="White" 
+               HorizontalTextAlignment="Center" 
+               Opacity="0.9" 
+               Margin="0,0,0,48"/>
+
+        <Button Text="Login" 
+                Clicked="OnLoginClicked" 
+                BackgroundColor="#8B0000" 
+                TextColor="White" 
+                FontAttributes="Bold" 
+                HeightRequest="48" 
+                CornerRadius="8" 
+                WidthRequest="280"/>
+
+        <Button Text="Sign Up" 
+                Clicked="OnSignUpClicked" 
+                BackgroundColor="Transparent" 
+                BorderColor="White" 
+                BorderWidth="2" 
+                TextColor="White" 
+                FontAttributes="Bold" 
+                HeightRequest="48" 
+                CornerRadius="8" 
+                WidthRequest="280"/>
+
+    </VerticalStackLayout>
+</ContentPage>

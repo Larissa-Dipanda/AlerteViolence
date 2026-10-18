@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlerteViolence.Views.SupportDetailsPage"
+             BackgroundColor="{StaticResource BackgroundDark}">
+    <ScrollView Padding="24">
+        <VerticalStackLayout Spacing="16">
+            <Label x:Name="LblService" Text="Service: MINEDUB" FontSize="24" TextColor="White" FontAttributes="Bold"/>
+            <Label Text="Location: Yaounde" FontSize="16" TextColor="{StaticResource PrimaryYellow}"/>
+            <Label Text="Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Every person has the right to live free from violence." FontSize="14" TextColor="Gray" LineBreakMode="WordWrap"/>
+            <Label Text="Phone: 670000000" FontSize="16" TextColor="{StaticResource PrimaryGreen}" FontAttributes="Bold"/>
+
+            <Button Text="Go back to Support List" Clicked="OnBackClicked" BackgroundColor="Transparent" BorderColor="White" TextColor="White" Margin="0,32,0,0"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

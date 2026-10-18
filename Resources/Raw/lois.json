@@ -1,0 +1,226 @@
+[
+  {
+    "Article": "Art. 263",
+    "Titre": "Coups et blessures volontaires",
+    "Description": "Toute violence exercée contre une personne sans incapacité de travail.",
+    "Peine": "Emprisonnement de 6 jours à 5 ans et amende.",
+    "Categorie": "Violences Physiques",
+    "LienWeb": "https://www.legicam.cm/loi/263"
+  },
+  {
+    "Article": "Art. 264",
+    "Titre": "Coups et blessures aggravés",
+    "Description": "Coups et blessures sur conjoint, enfant, personne vulnérable, ou avec arme.",
+    "Peine": "Emprisonnement de 5 à 10 ans.",
+    "Categorie": "Violences Physiques",
+    "LienWeb": "https://www.legicam.cm/loi/264"
+  },
+  {
+    "Article": "Art. 265",
+    "Titre": "Incapacité temporaire supérieure à 20 jours",
+    "Description": "Coups et blessures ayant entraîné une incapacité de travail de plus de 20 jours.",
+    "Peine": "Emprisonnement de 5 à 10 ans.",
+    "Categorie": "Violences Physiques",
+    "LienWeb": "https://www.legicam.cm/loi/265"
+  },
+  {
+    "Article": "Art. 266",
+    "Titre": "Mutilation",
+    "Description": "Ablation ou mutilation d'un membre, œil, organe génital (y compris excision).",
+    "Peine": "Emprisonnement de 10 à 20 ans.",
+    "Categorie": "Violences Physiques",
+    "LienWeb": "https://www.legicam.cm/loi/266"
+  },
+  {
+    "Article": "Art. 267",
+    "Titre": "Coups et blessures involontaires",
+    "Description": "Violence non intentionnelle par imprudence ou négligence.",
+    "Peine": "Emprisonnement de 6 jours à 2 ans et amende.",
+    "Categorie": "Violences Physiques",
+    "LienWeb": "https://www.legicam.cm/loi/267"
+  },
+  {
+    "Article": "Art. 293",
+    "Titre": "Viol",
+    "Description": "Tout acte de pénétration sexuelle commis sur autrui sans consentement (par violence, contrainte, menace ou surprise).",
+    "Peine": "Emprisonnement de 15 à 20 ans.",
+    "Categorie": "Violences Sexuelles",
+    "LienWeb": "https://www.legicam.cm/loi/293"
+  },
+  {
+    "Article": "Art. 293 al. 2",
+    "Titre": "Viol aggravé",
+    "Description": "Viol sur mineur de moins de 18 ans, personne vulnérable, ou par plusieurs personnes.",
+    "Peine": "Réclusion criminelle à perpétuité.",
+    "Categorie": "Violences Sexuelles",
+    "LienWeb": "https://www.legicam.cm/loi/293"
+  },
+  {
+    "Article": "Art. 294",
+    "Titre": "Tentative de viol",
+    "Description": "Tentative d'acte de pénétration sexuelle sans consentement.",
+    "Peine": "Emprisonnement de 5 à 10 ans.",
+    "Categorie": "Violences Sexuelles",
+    "LienWeb": "https://www.legicam.cm/loi/294"
+  },
+  {
+    "Article": "Art. 295",
+    "Titre": "Agression sexuelle",
+    "Description": "Tout acte sexuel sans pénétration imposé à autrui sans consentement (attouchements, baisers forcés).",
+    "Peine": "Emprisonnement de 5 à 10 ans.",
+    "Categorie": "Violences Sexuelles",
+    "LienWeb": "https://www.legicam.cm/loi/295"
+  },
+  {
+    "Article": "Art. 296",
+    "Titre": "Agression sexuelle sur mineur",
+    "Description": "Agression sexuelle commise sur une personne de moins de 18 ans.",
+    "Peine": "Emprisonnement de 10 à 20 ans.",
+    "Categorie": "Violences Sexuelles",
+    "LienWeb": "https://www.legicam.cm/loi/296"
+  },
+  {
+    "Article": "Art. 297",
+    "Titre": "Harcèlement sexuel",
+    "Description": "Propositions, pressions ou comportements répétés à connotation sexuelle dans le but d'obtenir un acte sexuel (notamment au travail).",
+    "Peine": "Emprisonnement de 1 à 5 ans et amende.",
+    "Categorie": "Violences Sexuelles",
+    "LienWeb": "https://www.legicam.cm/loi/297"
+  },
+  {
+    "Article": "Art. 347",
+    "Titre": "Atteinte à la pudeur",
+    "Description": "Exhibitionnisme, voyeurisme, ou tout acte sexuel public contraire à la morale.",
+    "Peine": "Emprisonnement de 6 mois à 2 ans et amende.",
+    "Categorie": "Violences Sexuelles",
+    "LienWeb": "https://www.legicam.cm/loi/347"
+  },
+  {
+    "Article": "Art. 348",
+    "Titre": "Exhibition sexuelle devant un mineur",
+    "Description": "Exhibition d'actes sexuels devant une personne de moins de 18 ans.",
+    "Peine": "Emprisonnement de 2 à 5 ans.",
+    "Categorie": "Violences Sexuelles",
+    "LienWeb": "https://www.legicam.cm/loi/348"
+  },
+  {
+    "Article": "Art. 332",
+    "Titre": "Menaces de mort ou de violences",
+    "Description": "Menaces répétées de mort, de violences, d'attentat contre les personnes ou les biens.",
+    "Peine": "Emprisonnement de 1 à 3 ans et amende.",
+    "Categorie": "Menaces et Harcèlement",
+    "LienWeb": "https://www.legicam.cm/loi/332"
+  },
+  {
+    "Article": "Art. 333",
+    "Titre": "Menaces avec arme ou ordre",
+    "Description": "Menaces effectuées avec arme, ou sur ordre d'une organisation.",
+    "Peine": "Emprisonnement de 5 à 10 ans.",
+    "Categorie": "Menaces et Harcèlement",
+    "LienWeb": "https://www.legicam.cm/loi/333"
+  },
+  {
+    "Article": "Art. 334",
+    "Titre": "Chantage",
+    "Description": "Menace de révéler des informations sensibles pour obtenir quelque chose (argent, acte sexuel).",
+    "Peine": "Emprisonnement de 1 à 5 ans et amende.",
+    "Categorie": "Menaces et Harcèlement",
+    "LienWeb": "https://www.legicam.cm/loi/334"
+  },
+  {
+    "Article": "Art. 335",
+    "Titre": "Dénonciation calomnieuse",
+    "Description": "Accusation mensongère visant à nuire à autrui auprès des autorités.",
+    "Peine": "Emprisonnement de 1 à 5 ans et amende.",
+    "Categorie": "Menaces et Harcèlement",
+    "LienWeb": "https://www.legicam.cm/loi/335"
+  },
+  {
+    "Article": "Art. 336",
+    "Titre": "Abandon de mineur",
+    "Description": "Abandon d'un enfant de moins de 15 ans dans un lieu non sûr.",
+    "Peine": "Emprisonnement de 1 à 5 ans.",
+    "Categorie": "Protection de l'Enfance",
+    "LienWeb": "https://www.legicam.cm/loi/336"
+  },
+  {
+    "Article": "Art. 337",
+    "Titre": "Non-présentation d'enfant",
+    "Description": "Refus de présenter un enfant à la personne qui en a la garde légale.",
+    "Peine": "Emprisonnement de 6 mois à 3 ans et amende.",
+    "Categorie": "Protection de l'Enfance",
+    "LienWeb": "https://www.legicam.cm/loi/337"
+  },
+  {
+    "Article": "Art. 338",
+    "Titre": "Mise en danger d'enfants",
+    "Description": "Exposition d'un mineur à des situations dangereuses (mendicité, prostitution, consommation de drogues).",
+    "Peine": "Emprisonnement de 5 à 10 ans.",
+    "Categorie": "Protection de l'Enfance",
+    "LienWeb": "https://www.legicam.cm/loi/338"
+  },
+  {
+    "Article": "Art. 339",
+    "Titre": "Exploitation d'enfants",
+    "Description": "Emploi d'enfants à des travaux dangereux ou contraires à leur éducation.",
+    "Peine": "Emprisonnement de 2 à 10 ans et amende.",
+    "Categorie": "Protection de l'Enfance",
+    "LienWeb": "https://www.legicam.cm/loi/339"
+  },
+  {
+    "Article": "Art. 340",
+    "Titre": "Violence sur ascendants",
+    "Description": "Coups et blessures sur parents, grands-parents ou personnes âgées.",
+    "Peine": "Emprisonnement de 5 à 10 ans.",
+    "Categorie": "Protection de l'Enfance",
+    "LienWeb": "https://www.legicam.cm/loi/340"
+  },
+  {
+    "Article": "Art. 345",
+    "Titre": "Mariage forcé",
+    "Description": "Contrainte physique ou morale pour forcer une personne à se marier.",
+    "Peine": "Emprisonnement de 1 à 5 ans et amende.",
+    "Categorie": "Mariages Forcés et Enlèvement",
+    "LienWeb": "https://www.legicam.cm/loi/345"
+  },
+  {
+    "Article": "Art. 346",
+    "Titre": "Enlèvement et séquestration",
+    "Description": "Détention ou enlèvement d'une personne sans son consentement.",
+    "Peine": "Emprisonnement de 5 à 10 ans.",
+    "Categorie": "Mariages Forcés et Enlèvement",
+    "LienWeb": "https://www.legicam.cm/loi/346"
+  },
+  {
+    "Article": "Art. 346 al. 2",
+    "Titre": "Enlèvement de mineur",
+    "Description": "Enlèvement d'une personne de moins de 18 ans.",
+    "Peine": "Emprisonnement de 10 à 20 ans.",
+    "Categorie": "Mariages Forcés et Enlèvement",
+    "LienWeb": "https://www.legicam.cm/loi/346"
+  },
+  {
+    "Article": "Art. 144",
+    "Titre": "Non-assistance à personne en danger",
+    "Description": "Ne pas porter secours à une personne en péril lorsqu'on peut le faire sans risque.",
+    "Peine": "Emprisonnement de 6 mois à 5 ans et amende.",
+    "Categorie": "Non-Assistance et Dignité",
+    "LienWeb": "https://www.legicam.cm/loi/144"
+  },
+  {
+    "Article": "Art. 145",
+    "Titre": "Discrimination",
+    "Description": "Refus de service ou traitement inégal basé sur le sexe, l'origine, la religion, le handicap.",
+    "Peine": "Emprisonnement de 1 à 5 ans et amende.",
+    "Categorie": "Non-Assistance et Dignité",
+    "LienWeb": "https://www.legicam.cm/loi/145"
+  },
+  {
+    "Article": "Art. 146",
+    "Titre": "Atteinte à la dignité",
+    "Description": "Traitement cruel, inhumain ou dégradant envers une personne.",
+    "Peine": "Emprisonnement de 1 à 10 ans.",
+    "Categorie": "Non-Assistance et Dignité",
+    "LienWeb": "https://www.legicam.cm/loi/146"
+  }
+]

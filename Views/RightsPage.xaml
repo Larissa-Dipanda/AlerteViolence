@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlerteViolence.Views.RightsPage"
+             BackgroundColor="{StaticResource BackgroundDark}"
+             Title="Rights">
+    <ScrollView Padding="16">
+        <VerticalStackLayout Spacing="16">
+            <Label Text="About Rights" FontSize="24" TextColor="White" FontAttributes="Bold" Margin="0,16,0,24"/>
+
+            <Frame BackgroundColor="#1E1E1E" CornerRadius="8" Padding="16" BorderColor="#333333">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Know Your Rights" FontSize="18" TextColor="{StaticResource PrimaryYellow}" FontAttributes="Bold"/>
+                    <Label Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Every person has the right to live free from violence." FontSize="14" TextColor="Gray" LineBreakMode="WordWrap"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="#1E1E1E" CornerRadius="8" Padding="16" BorderColor="#333333">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Reporting Violence" FontSize="18" TextColor="{StaticResource PrimaryYellow}" FontAttributes="Bold"/>
+                    <Label Text="If you have experienced or witnessed violence, you may report the situation to the appropriate authorities." FontSize="14" TextColor="Gray" LineBreakMode="WordWrap"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="#1E1E1E" CornerRadius="8" Padding="16" BorderColor="#333333">
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Protection and Support" FontSize="18" TextColor="{StaticResource PrimaryYellow}" FontAttributes="Bold"/>
+                    <Label Text="Victims and witnesses may have access to medical, psychological, legal, and social support." FontSize="14" TextColor="Gray" LineBreakMode="WordWrap"/>
+                </VerticalStackLayout>
+            </Frame>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

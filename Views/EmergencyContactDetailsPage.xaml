@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlerteViolence.Views.EmergencyContactDetailsPage"
+             BackgroundColor="{StaticResource BackgroundDark}">
+    <ScrollView Padding="24">
+        <VerticalStackLayout Spacing="16">
+            <Label x:Name="LblContact" Text="Contact: 117" FontSize="24" TextColor="White" FontAttributes="Bold"/>
+            <Label Text="Domain: Threats" FontSize="16" TextColor="{StaticResource PrimaryYellow}"/>
+            <Label Text="Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Every person has the right to live free from violence." FontSize="14" TextColor="Gray" LineBreakMode="WordWrap"/>
+
+            <Button Text="Go back to Contacts List" Clicked="OnBackClicked" BackgroundColor="Transparent" BorderColor="White" TextColor="White" Margin="0,32,0,0"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

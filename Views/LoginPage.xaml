@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlerteViolence.Views.LoginPage"
+             BackgroundColor="{StaticResource BackgroundDark}"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="32" Spacing="24" VerticalOptions="Center">
+
+            <!-- Titre -->
+            <Label Text="Login"
+                   Style="{StaticResource TitrePage}"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,0,0,32"/>
+
+            <!-- Champ Email -->
+            <Entry Placeholder="Enter your email"
+                   Keyboard="Email"
+                   TextColor="{StaticResource TextPrimary}"
+                   PlaceholderColor="{StaticResource TextSecondary}"
+                   BackgroundColor="{StaticResource SurfaceDark}"
+                   HeightRequest="48"
+                   Margin="0,0,0,16"/>
+
+            <!-- Champ Mot de passe -->
+            <Entry Placeholder="Enter your password"
+                   IsPassword="True"
+                   TextColor="{StaticResource TextPrimary}"
+                   PlaceholderColor="{StaticResource TextSecondary}"
+                   BackgroundColor="{StaticResource SurfaceDark}"
+                   HeightRequest="48"
+                   Margin="0,0,0,8"/>
+
+            <!-- Mot de passe oublié -->
+            <Label Text="Forgot password?"
+                   TextColor="{StaticResource PrimaryYellow}"
+                   FontSize="14"
+                   HorizontalTextAlignment="End"
+                   Margin="0,0,0,32">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnForgotPasswordTapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!-- Bouton Login -->
+            <Button Text="Login"
+                    Clicked="OnLoginClicked"
+                    BackgroundColor="{StaticResource PrimaryRed}"
+                    TextColor="White"
+                    FontFamily="InstrumentSansSemiBold"
+                    FontSize="16"
+                    HeightRequest="48"
+                    CornerRadius="8"/>
+
+            <!-- Lien vers Sign Up -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="8" Margin="0,16,0,0">
+                <Label Text="Don’t have an account?"
+                       TextColor="{StaticResource TextSecondary}"
+                       FontSize="14"
+                       VerticalOptions="Center"/>
+                <Label Text="Sign Up"
+                       TextColor="{StaticResource PrimaryRed}"
+                       FontSize="14"
+                       FontAttributes="Bold"
+                       VerticalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSignUpTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
