@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlerteViolence.Views.SupportDetailsPage"
+             BackgroundColor="{StaticResource BackgroundDark}"
+             Title="Détails du service">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="16">
+
+            <Label Text="Détails du service" FontFamily="IstokWebBold" FontSize="24" TextColor="White"/>
+
+            <Border BackgroundColor="{StaticResource SurfaceDark}" Stroke="#333333" StrokeThickness="1" Padding="16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="8"/>
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="12">
+                    <Label Text="Service : MINEDUB" FontFamily="IstokWebBold" FontSize="20" TextColor="{StaticResource PrimaryRed}"/>
+                    <Label Text="Localisation : Yaoundé" FontSize="16" TextColor="White"/>
+                    <Label Text="Description : Lorem ipsum dolor sit amet, consectetur adipiscing elit." FontSize="14" TextColor="{StaticResource TextSecondary}"/>
+                    <Label Text="Toute personne a le droit de vivre sans violence, abus, intimidation et discrimination. Cette application fournit des informations générales destinées à aider les utilisateurs à comprendre leurs droits et à accéder à un soutien approprié." FontSize="14" TextColor="{StaticResource TextSecondary}"/>
+                    <Label Text="Téléphone : 670000000" FontSize="16" TextColor="{StaticResource PrimaryGreen}"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="Retour à la liste des services" 
+                    Clicked="OnRetourClicked"
+                    BackgroundColor="{StaticResource PrimaryRed}" 
+                    TextColor="White" 
+                    FontFamily="InstrumentSansSemiBold"
+                    FontSize="16" 
+                    HeightRequest="48" 
+                    CornerRadius="8"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlerteViolence.Views.SosReportPage"
+             BackgroundColor="{StaticResource BackgroundDark}"
+             Title="SOS">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="24">
+
+            <VerticalStackLayout Spacing="4" Margin="0,16,0,24">
+                <Label Text="Bonjour !" FontFamily="IstokWebBold" FontSize="24" TextColor="White"/>
+                <Label Text="Jeremy Medou" FontFamily="IstokWebBold" FontSize="24" TextColor="White"/>
+                <Label Text="Obtenez la meilleure assistance" FontFamily="IstokWebBold" FontSize="18" TextColor="{StaticResource PrimaryYellow}" Margin="0,8,0,0"/>
+                <Label Text="Sans sécurité, tout le reste devient secondaire." FontSize="14" TextColor="{StaticResource TextSecondary}" FontFamily="InstrumentSansRegular" Margin="0,4,0,0"/>
+            </VerticalStackLayout>
+
+            <Label Text="Rapport rapide" FontFamily="IstokWebBold" FontSize="20" TextColor="White" Margin="0,0,0,16"/>
+
+            <!-- Remplacement de Frame par Border -->
+            <Border BackgroundColor="{StaticResource SurfaceDark}" Stroke="#333333" StrokeThickness="1" Padding="16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="8"/>
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="16">
+                    <Label Text="Entrez le type de rapport" FontSize="14" TextColor="{StaticResource TextSecondary}"/>
+                    <Entry x:Name="EntryType" Placeholder="ex. Violence conjugale, Menaces..." TextColor="White" PlaceholderColor="{StaticResource TextMuted}" BackgroundColor="{StaticResource SurfaceLight}" HeightRequest="48"/>
+
+                    <Label Text="Victime ou témoin" FontSize="14" TextColor="{StaticResource TextSecondary}" Margin="0,8,0,0"/>
+                    <Picker x:Name="PickerStatus" TextColor="White" BackgroundColor="{StaticResource SurfaceLight}" HeightRequest="48">
+                        <Picker.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Victime</x:String>
+                                <x:String>Témoin</x:String>
+                            </x:Array>
+                        </Picker.ItemsSource>
+                    </Picker>
+
+                    <!-- Correction : Utilisation de l'attribut Text au lieu du contenu direct -->
+                    <Button Text="Soumettre" Clicked="OnSubmitClicked" BackgroundColor="{StaticResource PrimaryRed}" TextColor="White" FontFamily="InstrumentSansSemiBold" FontSize="16" HeightRequest="48" CornerRadius="8" Margin="0,16,0,0"/>
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

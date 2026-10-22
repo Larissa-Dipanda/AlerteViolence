@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlerteViolence.Views.LoginPage"
+             BackgroundColor="{StaticResource BackgroundDark}"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="32" Spacing="20" VerticalOptions="Center">
+
+            <!-- Logo discret en haut -->
+            <Image Source="app_logo.png" 
+                   WidthRequest="80" 
+                   HeightRequest="80" 
+                   HorizontalOptions="Center" 
+                   Margin="0,0,0,24"/>
+
+            <Label Text="Login" 
+                   Style="{StaticResource TitrePrincipal}" 
+                   HorizontalTextAlignment="Center" 
+                   Margin="0,0,0,32"/>
+
+            <!-- Champ Email -->
+            <Entry Placeholder="Entrer votre email" 
+                   Keyboard="Email"
+                   Style="{StaticResource ChampSaisie}"/>
+
+            <!-- Champ Mot de passe -->
+            <Entry Placeholder="Entrer votre mot de passe" 
+                   IsPassword="True"
+                   Style="{StaticResource ChampSaisie}"/>
+
+            <!-- Lien Mot de passe oublié -->
+            <Label Text="Mot de passe oublié ?" 
+                   TextColor="{StaticResource PrimaryRed}" 
+                   HorizontalTextAlignment="End" 
+                   FontSize="14"
+                   FontFamily="InstrumentSansRegular"
+                   Margin="0,-8,0,16">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnForgotPasswordTapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!-- Bouton Login -->
+            <Button Text="Se connecter" 
+                    Clicked="OnLoginClicked"
+                    Style="{StaticResource BoutonPrimaire}"/>
+
+            <!-- Lien vers Inscription -->
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="8" Margin="0,24,0,0">
+                <Label Text="Avez-vous un compte ?" TextColor="{StaticResource TextSecondary}" FontSize="14"/>
+                <Label Text="Inscrivez-vous" TextColor="{StaticResource PrimaryRed}" FontAttributes="Bold" FontSize="14">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSignUpTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlerteViolence.Views.SignUpPage"
+             BackgroundColor="{StaticResource BackgroundDark}"
+             NavigationPage.HasNavigationBar="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="32" Spacing="20" VerticalOptions="Center">
+
+            <Label Text="Inscrivez-vous" 
+                   Style="{StaticResource TitrePrincipal}" 
+                   HorizontalTextAlignment="Center" 
+                   Margin="0,0,0,24"/>
+
+            <Entry Placeholder="Jeremy Medou" 
+                   Style="{StaticResource ChampSaisie}"/>
+
+            <Entry Placeholder="jeremymedou@gmail.com" 
+                   Keyboard="Email" 
+                   Style="{StaticResource ChampSaisie}"/>
+
+            <Entry Placeholder="........" 
+                   IsPassword="True" 
+                   Style="{StaticResource ChampSaisie}"/>
+
+            <!-- Case à cocher CGU -->
+            <HorizontalStackLayout Spacing="12" Margin="0,8,0,0">
+                <CheckBox Color="{StaticResource PrimaryRed}" IsChecked="True" VerticalOptions="Center"/>
+                <Label Text="I agree with the terms of policy." 
+                       TextColor="{StaticResource TextSecondary}" 
+                       VerticalOptions="Center" 
+                       FontSize="14"/>
+            </HorizontalStackLayout>
+
+            <Button Text="Inscrivez-vous" 
+                    Clicked="OnSignUpClicked" 
+                    Style="{StaticResource BoutonPrimaire}"/>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="8" Margin="0,24,0,0">
+                <Label Text="Avez-vous un compte ?" TextColor="{StaticResource TextSecondary}" FontSize="14"/>
+                <Label Text="Se connecter" TextColor="{StaticResource PrimaryRed}" FontAttributes="Bold" FontSize="14">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnLoginTapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

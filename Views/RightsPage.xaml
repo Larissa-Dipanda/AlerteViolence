@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlerteViolence.Views.RightsPage"
+             BackgroundColor="{StaticResource BackgroundDark}"
+             Title="Droits">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="24" Spacing="24">
+
+            <Label Text="À propos des droits" FontFamily="IstokWebBold" FontSize="24" TextColor="White" Margin="0,0,0,8"/>
+
+            <!-- Section 1 : Maquette Figma -->
+            <Border BackgroundColor="{StaticResource SurfaceDark}" Stroke="#333333" StrokeThickness="1" Padding="16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="8"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Connaître vos droits" FontFamily="IstokWebBold" FontSize="20" TextColor="{StaticResource PrimaryYellow}"/>
+                    <Label Text="Toute personne a le droit de vivre sans violence, abus, intimidation et discrimination. Cette application fournit des informations pour vous aider à comprendre vos droits." FontSize="14" TextColor="{StaticResource TextSecondary}"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Section 2 : Maquette Figma -->
+            <Border BackgroundColor="{StaticResource SurfaceDark}" Stroke="#333333" StrokeThickness="1" Padding="16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="8"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Vos droits" FontFamily="IstokWebBold" FontSize="20" TextColor="{StaticResource PrimaryYellow}"/>
+                    <Label Text="Vous avez le droit de demander de l'aide, de signaler la violence et d'accéder à des services de soutien sans crainte de représailles." FontSize="14" TextColor="{StaticResource TextSecondary}"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Section 3 : Maquette Figma -->
+            <Border BackgroundColor="{StaticResource SurfaceDark}" Stroke="#333333" StrokeThickness="1" Padding="16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="8"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Signaler les violences" FontFamily="IstokWebBold" FontSize="20" TextColor="{StaticResource PrimaryYellow}"/>
+                    <Label Text="Si vous avez subi ou été témoin de violence, vous pouvez signaler la situation aux autorités compétentes ou contacter une organisation de soutien." FontSize="14" TextColor="{StaticResource TextSecondary}"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Section 4 : Maquette Figma -->
+            <Border BackgroundColor="{StaticResource SurfaceDark}" Stroke="#333333" StrokeThickness="1" Padding="16">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="8"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="Protection et soutien" FontFamily="IstokWebBold" FontSize="20" TextColor="{StaticResource PrimaryYellow}"/>
+                    <Label Text="Les victimes et les témoins peuvent avoir accès à un soutien médical, psychologique, juridique et social." FontSize="14" TextColor="{StaticResource TextSecondary}"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Liste des lois camerounaises (Votre demande) -->
+            <Label Text="Textes de loi applicables (Cameroun)" FontFamily="IstokWebBold" FontSize="20" TextColor="White" Margin="0,16,0,8"/>
+
+            <CollectionView ItemsSource="{Binding Lois}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border BackgroundColor="{StaticResource SurfaceDark}" 
+                                Stroke="#333333" 
+                                StrokeThickness="1" 
+                                Padding="16" 
+                                Margin="0,0,0,16">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="8"/>
+                            </Border.StrokeShape>
+
+                            <VerticalStackLayout Spacing="8">
+                                <Label Text="{Binding Article}" FontFamily="IstokWebBold" FontSize="18" TextColor="{StaticResource PrimaryYellow}"/>
+                                <Label Text="{Binding Titre}" FontFamily="IstokWebBold" FontSize="16" TextColor="White"/>
+
+                                <!-- Rend toute la carte cliquable -->
+                                <VerticalStackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnLoiClicked" CommandParameter="{Binding .}"/>
+                                </VerticalStackLayout.GestureRecognizers>
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

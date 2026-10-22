@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlerteViolence.Views.EmergencyContactsPage"
+             BackgroundColor="{StaticResource BackgroundDark}"
+             Title="Contacts d'urgence">
+
+    <CollectionView ItemsSource="{Binding Contacts}" Margin="16">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Border BackgroundColor="{StaticResource SurfaceDark}" 
+                        Stroke="#333333" 
+                        StrokeThickness="1" 
+                        Padding="16" 
+                        Margin="0,0,0,8">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="8"/>
+                    </Border.StrokeShape>
+
+                    <VerticalStackLayout Spacing="8">
+                        <Label Text="{Binding Nom}" FontFamily="IstokWebBold" FontSize="18" TextColor="White"/>
+                        <Label Text="{Binding Numero}" FontFamily="IstokWebBold" FontSize="24" TextColor="{StaticResource PrimaryRed}"/>
+                        <Label Text="{Binding Description}" FontSize="14" TextColor="{StaticResource TextSecondary}"/>
+
+                        <!-- C'est cette partie qui rend la carte cliquable et déclenche le popup de détails -->
+                        <VerticalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnContactClicked" CommandParameter="{Binding .}" />
+                        </VerticalStackLayout.GestureRecognizers>
+
+                    </VerticalStackLayout>
+                </Border>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

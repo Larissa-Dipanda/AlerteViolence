@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlerteViolence.Views.EntryPage"
+             BackgroundColor="{StaticResource PrimaryRed}"
+             NavigationPage.HasNavigationBar="False">
+
+    <VerticalStackLayout 
+        Padding="32" 
+        Spacing="24"
+        VerticalOptions="Center">
+
+        <!-- Icône / Logo -->
+        <Label Text="🛡️" 
+               FontSize="60" 
+               HorizontalOptions="Center" 
+               Margin="0,0,0,32"/>
+
+        <!-- Titre principal -->
+        <Label Text="You are secured!" 
+               Style="{StaticResource TitrePrincipal}" 
+               HorizontalTextAlignment="Center"
+               Margin="0,0,0,16"/>
+
+        <!-- Sous-titre -->
+        <Label Text="Sentez-vous en sécurité de signaler tout incident de violence " 
+               FontSize="16" 
+               TextColor="White" 
+               HorizontalTextAlignment="Center"
+               Opacity="0.9"
+               Margin="0,0,0,48"/>
+
+        <!-- Bouton Login -->
+        <Button Text="Login" 
+                Clicked="OnLoginClicked"
+                Style="{StaticResource BoutonPrimaire}"
+                BackgroundColor="#8B0000"
+                WidthRequest="280"
+                HorizontalOptions="Center" />
+
+            <!-- Bouton Sign Up (Contour) -->
+            <Button Text="Sign Up" 
+                Clicked="OnSignUpClicked"
+                Style="{StaticResource BoutonContour}"
+                WidthRequest="280"
+                HorizontalOptions="Center"/>
+
+    </VerticalStackLayout>
+</ContentPage>

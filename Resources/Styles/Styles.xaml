@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<?xaml-comp compile="true" ?>
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+    <!-- Style de base pour les Labels -->
+    <Style TargetType="Label">
+        <Setter Property="FontFamily" Value="InstrumentSansRegular" />
+        <Setter Property="TextColor" Value="{StaticResource TextPrimary}" />
+    </Style>
+
+    <!-- Titre principal (Istok Web Bold, 24px) -->
+    <Style x:Key="TitrePrincipal" TargetType="Label">
+        <Setter Property="FontFamily" Value="IstokWebBold" />
+        <Setter Property="FontSize" Value="28" />
+        <Setter Property="TextColor" Value="White" />
+    </Style>
+
+    <!-- Sous-titre (Istok Web Bold, 20px) -->
+    <Style x:Key="SousTitre" TargetType="Label">
+        <Setter Property="FontFamily" Value="IstokWebBold" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="TextColor" Value="{StaticResource PrimaryYellow}" />
+    </Style>
+
+    <!-- Corps de texte -->
+    <Style x:Key="CorpsTexte" TargetType="Label">
+        <Setter Property="FontFamily" Value="InstrumentSansRegular" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="TextColor" Value="{StaticResource TextSecondary}" />
+    </Style>
+
+    <!-- Bouton primaire rouge -->
+    <Style x:Key="BoutonPrimaire" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="{StaticResource PrimaryRed}" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontFamily" Value="InstrumentSansSemiBold" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="HeightRequest" Value="48" />
+        <Setter Property="CornerRadius" Value="8" />
+        <Setter Property="Margin" Value="0,16,0,0" />
+    </Style>
+
+    <!-- Bouton contour blanc -->
+    <Style x:Key="BoutonContour" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="BorderColor" Value="White" />
+        <Setter Property="BorderWidth" Value="2" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="FontFamily" Value="InstrumentSansSemiBold" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="HeightRequest" Value="48" />
+        <Setter Property="CornerRadius" Value="8" />
+    </Style>
+
+    <!-- Champ de saisie sombre -->
+    <Style x:Key="ChampSaisie" TargetType="Entry">
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="PlaceholderColor" Value="{StaticResource TextMuted}" />
+        <Setter Property="BackgroundColor" Value="{StaticResource SurfaceLight}" />
+        <Setter Property="HeightRequest" Value="48" />
+        <Setter Property="Margin" Value="0,0,0,16" />
+    </Style>
+
+</ResourceDictionary>
