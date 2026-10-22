@@ -3,12 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AlerteViolence.Views.ReportHistoryPage"
              BackgroundColor="{StaticResource BackgroundDark}"
-             Title="Historique">
+             Title="Logs">
+    <!-- Correspond au nom de l'onglet dans la maquette -->
 
     <VerticalStackLayout Padding="16">
+        <!-- Bouton de sortie rapide discret en haut à droite -->
+        <Button Text="Quitter l'app" 
+            Clicked="OnQuickExitClicked" 
+            BackgroundColor="Transparent" 
+            TextColor="{StaticResource TextMuted}" 
+            FontSize="12" 
+            HorizontalOptions="End" 
+            Margin="0,0,0,8"/>
 
-        <!-- Suppression de FillAndExpand obsolète -->
         <CollectionView ItemsSource="{Binding Rapports}" VerticalOptions="Fill">
+
+            <!-- État vide conforme à la maquette : "Empty History!" / "Feel free to report." -->
             <CollectionView.EmptyView>
                 <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="16">
                     <Label Text="Historique vide !" FontFamily="IstokWebBold" FontSize="24" TextColor="White" HorizontalTextAlignment="Center"/>
@@ -18,7 +28,11 @@
 
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Border BackgroundColor="{StaticResource SurfaceDark}" Stroke="#333333" StrokeThickness="1" Padding="16" Margin="0,0,0,8">
+                    <Border BackgroundColor="{StaticResource SurfaceDark}" 
+                            Stroke="#333333" 
+                            StrokeThickness="1" 
+                            Padding="16" 
+                            Margin="0,0,0,8">
                         <Border.StrokeShape>
                             <RoundRectangle CornerRadius="8"/>
                         </Border.StrokeShape>
@@ -27,12 +41,28 @@
                             <Label Text="{Binding Numero}" FontFamily="IstokWebBold" FontSize="18" TextColor="{StaticResource PrimaryRed}"/>
                             <Label Text="{Binding Type}" FontSize="14" TextColor="White"/>
                             <Label Text="{Binding Statut}" FontSize="14" TextColor="{StaticResource TextSecondary}"/>
+
+                            <!-- AJOUT : Rendre l'élément cliquable pour ouvrir les "History Details" -->
+                            <VerticalStackLayout.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.ShowDetailsCommand}" 
+                                                      CommandParameter="{Binding .}" />
+                            </VerticalStackLayout.GestureRecognizers>
                         </VerticalStackLayout>
                     </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
 
-        <Button Text="Suppression rapide" Clicked="OnSuppressionRapideClicked" BackgroundColor="{StaticResource PrimaryRed}" TextColor="White" FontFamily="InstrumentSansSemiBold" FontSize="16" HeightRequest="48" CornerRadius="8" Margin="0,16,0,0"/>
+        <!--  Suppression du 'Clicked' redondant. Seul 'Command' est utilisé en MVVM -->
+        <Button Text="Suppression rapide" 
+                Command="{Binding QuickDeleteCommand}" 
+                BackgroundColor="{StaticResource PrimaryRed}" 
+                TextColor="White" 
+                FontFamily="InstrumentSansSemiBold"
+                FontSize="16" 
+                HeightRequest="48" 
+                CornerRadius="8" 
+                Margin="0,16,0,0"/>
+
     </VerticalStackLayout>
 </ContentPage>

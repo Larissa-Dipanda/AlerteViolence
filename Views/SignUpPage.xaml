@@ -3,49 +3,33 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AlerteViolence.Views.SignUpPage"
              BackgroundColor="{StaticResource BackgroundDark}"
-             NavigationPage.HasNavigationBar="False">
+             Title="" NavigationPage.HasNavigationBar="False">
 
     <ScrollView>
         <VerticalStackLayout Padding="32" Spacing="20" VerticalOptions="Center">
+            <Label Text="Sign Up" Style="{StaticResource TitrePrincipal}" HorizontalTextAlignment="Center" Margin="0,0,0,24"/>
 
-            <Label Text="Inscrivez-vous" 
-                   Style="{StaticResource TitrePrincipal}" 
-                   HorizontalTextAlignment="Center" 
-                   Margin="0,0,0,24"/>
+            <!-- Ajout de x:Name pour récupérer le nom -->
+            <Entry x:Name="EntryNom" Placeholder="Votre nom complet" TextColor="White" PlaceholderColor="{StaticResource TextMuted}" BackgroundColor="{StaticResource SurfaceLight}" HeightRequest="48" Margin="0,0,0,16"/>
 
-            <Entry Placeholder="Jeremy Medou" 
-                   Style="{StaticResource ChampSaisie}"/>
+            <Entry x:Name="EntryEmail" Placeholder="votre@email.com" Keyboard="Email" TextColor="White" PlaceholderColor="{StaticResource TextMuted}" BackgroundColor="{StaticResource SurfaceLight}" HeightRequest="48" Margin="0,0,0,16"/>
+            <Entry x:Name="EntryPassword" Placeholder="Mot de passe" IsPassword="True" TextColor="White" PlaceholderColor="{StaticResource TextMuted}" BackgroundColor="{StaticResource SurfaceLight}" HeightRequest="48" Margin="0,0,0,16"/>
 
-            <Entry Placeholder="jeremymedou@gmail.com" 
-                   Keyboard="Email" 
-                   Style="{StaticResource ChampSaisie}"/>
-
-            <Entry Placeholder="........" 
-                   IsPassword="True" 
-                   Style="{StaticResource ChampSaisie}"/>
-
-            <!-- Case à cocher CGU -->
             <HorizontalStackLayout Spacing="12" Margin="0,8,0,0">
                 <CheckBox Color="{StaticResource PrimaryRed}" IsChecked="True" VerticalOptions="Center"/>
-                <Label Text="I agree with the terms of policy." 
-                       TextColor="{StaticResource TextSecondary}" 
-                       VerticalOptions="Center" 
-                       FontSize="14"/>
+                <Label Text="J'accepte les conditions d'utilisation." TextColor="{StaticResource TextSecondary}" VerticalOptions="Center" FontSize="14"/>
             </HorizontalStackLayout>
 
-            <Button Text="Inscrivez-vous" 
-                    Clicked="OnSignUpClicked" 
-                    Style="{StaticResource BoutonPrimaire}"/>
+            <Button Text="S'inscrire" Clicked="OnSignUpClicked" Style="{StaticResource BoutonPrimaire}" Margin="0,24,0,0"/>
 
             <HorizontalStackLayout HorizontalOptions="Center" Spacing="8" Margin="0,24,0,0">
-                <Label Text="Avez-vous un compte ?" TextColor="{StaticResource TextSecondary}" FontSize="14"/>
+                <Label Text="Déjà un compte ?" TextColor="{StaticResource TextSecondary}" FontSize="14"/>
                 <Label Text="Se connecter" TextColor="{StaticResource PrimaryRed}" FontAttributes="Bold" FontSize="14">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnLoginTapped"/>
                     </Label.GestureRecognizers>
                 </Label>
             </HorizontalStackLayout>
-
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

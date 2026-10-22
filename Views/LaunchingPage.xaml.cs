@@ -14,7 +14,7 @@ public partial class LaunchingPage : ContentPage
         base.OnAppearing();
 
         // Attend 1 seconde pour simuler le chargement
-        await Task.Delay(1000);
+        await Task.Delay(200);
 
         // Redirige vers l'écran EntryPage
         await Shell.Current.GoToAsync(nameof(EntryPage));

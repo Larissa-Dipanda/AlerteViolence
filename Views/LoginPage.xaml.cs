@@ -7,13 +7,12 @@ public partial class LoginPage : ContentPage
         InitializeComponent();
     }
 
-    private async void OnLoginClicked(object sender, EventArgs e)
+    private async void OnLoginClicked(object? sender, EventArgs e)
     {
-        // Simulation de connexion réussie -> Affichage du Pop-up "Hi! Welcome Back"
-        //await DisplayAlert("Hi!", "Welcome Back", "OK");
+        // Sauvegarde l'état de connexion
+        Preferences.Default.Set("IsLoggedIn", true);
 
-        // Navigation vers la barre d'onglets principale (SosReportPage est le premier onglet)
-        // Le "//" permet de réinitialiser la pile de navigation
+        //await Shell.Current.DisplayAlert("Hi!", "Welcome Back", "OK");
         await Shell.Current.GoToAsync("//MainTabBar");
     }
 
@@ -22,8 +21,13 @@ public partial class LoginPage : ContentPage
         await Shell.Current.GoToAsync(nameof(SignUpPage));
     }
 
-    private void OnForgotPasswordTapped(object sender, TappedEventArgs e)
+    
+    private async void OnForgotPasswordTapped(object? sender, TappedEventArgs e)
     {
-        DisplayAlertAsync("Info", "Fonctionnalité de récupération à implémenter.", "OK");
+        // Simulation réaliste d'un envoi d'email de réinitialisation
+        await Shell.Current.DisplayAlertAsync(
+            "Mot de passe oublié",
+            "Un lien de réinitialisation a été envoyé à votre adresse e-mail. Veuillez consulter votre boîte de réception (Simulation).",
+            "OK");
     }
 }

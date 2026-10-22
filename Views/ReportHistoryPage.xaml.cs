@@ -1,38 +1,27 @@
-using System.Collections.ObjectModel;
+using AlerteViolence.ViewModels;
 
 namespace AlerteViolence.Views;
 
-public class Rapport
-{
-    public string Numero { get; set; } = string.Empty;
-    public string Type { get; set; } = string.Empty;
-    public string Statut { get; set; } = string.Empty;
-}
-
 public partial class ReportHistoryPage : ContentPage
 {
-    public ObservableCollection<Rapport> Rapports { get; set; } = new();
+    private readonly ReportHistoryViewModel _viewModel;
 
     public ReportHistoryPage()
     {
         InitializeComponent();
-        BindingContext = this;
-        ChargerRapports();
+        _viewModel = new ReportHistoryViewModel();
+        BindingContext = _viewModel;
     }
 
-    private void ChargerRapports()
+    //  Se déclenche à chaque fois que l'onglet "Logs" devient visible
+    protected override async void OnAppearing()
     {
-        Rapports.Add(new Rapport { Numero = "112", Type = "Menaces", Statut = "Victime" });
-        Rapports.Add(new Rapport { Numero = "117", Type = "Violence conjugale", Statut = "Victime" });
-        Rapports.Add(new Rapport { Numero = "118", Type = "Maltraitance", Statut = "Témoin" });
+        base.OnAppearing();
+        await _viewModel.LoadDataAsync();
     }
-
-    private async void OnSuppressionRapideClicked(object sender, EventArgs e)
+    private async void OnQuickExitClicked(object? sender, EventArgs e)
     {
-        bool confirmer = await DisplayAlertAsync("Suppression rapide", "Voulez-vous vraiment supprimer tout l'historique ?", "Oui", "Non");
-        if (confirmer)
-        {
-            Rapports.Clear();
-        }
+        // Navigation vers la EndingPage. Le "//" réinitialise la pile de navigation
+        await Shell.Current.GoToAsync("//EndingPage");
     }
 }

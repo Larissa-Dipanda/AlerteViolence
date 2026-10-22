@@ -1,3 +1,5 @@
+using AlerteViolence.ViewModels;
+
 namespace AlerteViolence.Views;
 
 public partial class SosReportPage : ContentPage
@@ -5,18 +7,13 @@ public partial class SosReportPage : ContentPage
     public SosReportPage()
     {
         InitializeComponent();
+        BindingContext = new SosReportViewModel();
     }
 
-    private async void OnSubmitClicked(object sender, EventArgs e)
+    // Méthode pour déclencher la page de fin
+    private async void OnQuickExitClicked(object? sender, EventArgs e)
     {
-        if (string.IsNullOrWhiteSpace(EntryType.Text) || PickerStatus.SelectedItem == null)
-        {
-            await DisplayAlertAsync("Erreur", "Veuillez remplir tous les champs.", "OK");
-            return;
-        }
-
-        // Navigation vers la page de description détaillée (Report-Description)
-        // On utilise "///" pour empiler la page par-dessus la TabBar
-        await Shell.Current.GoToAsync(nameof(ReportDescriptionPage));
+        // Navigation vers la EndingPage. Le "//" réinitialise la pile de navigation
+        await Shell.Current.GoToAsync("//EndingPage");
     }
 }

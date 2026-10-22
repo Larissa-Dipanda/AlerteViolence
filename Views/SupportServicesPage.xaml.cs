@@ -1,5 +1,6 @@
-using System.Collections.ObjectModel;
 using AlerteViolence.Models;
+using AlerteViolence.ViewModels;
+using System.Collections.ObjectModel;
 
 namespace AlerteViolence.Views;
 
@@ -10,6 +11,7 @@ public partial class SupportServicesPage : ContentPage
     public SupportServicesPage()
     {
         InitializeComponent();
+        //BindingContext = new SupportViewModel();
         BindingContext = this;
         ChargerStructuresCameroun();
     }

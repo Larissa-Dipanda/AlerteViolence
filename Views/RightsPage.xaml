@@ -7,6 +7,14 @@
 
     <ScrollView>
         <VerticalStackLayout Padding="24" Spacing="24">
+            <!-- Bouton de sortie rapide discret en haut à droite -->
+            <Button Text="Quitter l'app" 
+                Clicked="OnQuickExitClicked" 
+                BackgroundColor="Transparent" 
+                TextColor="{StaticResource TextMuted}" 
+                FontSize="12" 
+                HorizontalOptions="End" 
+                Margin="0,0,0,8"/>
 
             <Label Text="À propos des droits" FontFamily="IstokWebBold" FontSize="24" TextColor="White" Margin="0,0,0,8"/>
 

@@ -38,7 +38,8 @@
     <MauiIcon Include="Resources\AppIcon\appicon.png" Color="#D32F2F" />
     
     <MauiFont Include="Resources\Fonts\*" />
-    <MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#D32F2F" BaseSize="128,128" />
+    <!--  On utilise notre logo comme écran de démarrage avec le fond rouge de l'app -->
+	<MauiSplashScreen Include="Resources\Images\app_logo.png" Color="#D32F2F" BaseSize="128,128" />
   </ItemGroup>
 
 	<ItemGroup>

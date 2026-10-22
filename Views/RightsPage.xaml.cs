@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using AlerteViolence.Models;
+using Microsoft.Maui.ApplicationModel; // Indispensable pour ouvrir le navigateur
 
 namespace AlerteViolence.Views;
 
@@ -44,12 +45,37 @@ public partial class RightsPage : ContentPage
         Lois.Add(new Loi { Article = "Art. 146", Titre = "Atteinte à la dignité", Description = "Traitement cruel, inhumain ou dégradant envers une personne.", Peine = "1 à 10 ans de prison.", LienWeb = "https://www.minjustice.gov.cm" });
     }
 
-    private async void OnLoiClicked(object sender, TappedEventArgs e)
+    private async void OnQuickExitClicked(object? sender, EventArgs e)
+    {
+        // Navigation vers la EndingPage. Le "//" réinitialise la pile de navigation
+        await Shell.Current.GoToAsync("//EndingPage");
+    }
+    // Utilisation de DisplayActionSheet + Browser pour ouvrir le lien
+    private async void OnLoiClicked(object? sender, TappedEventArgs e)
     {
         if (e.Parameter is Loi loi)
         {
-            // Utilisation de DisplayAlertAsync (compatible .NET 9/10)
-            await DisplayAlertAsync(loi.Article, $"{loi.Titre}\n\n{loi.Description}\n\n⚖️ Peine : {loi.Peine}\n\n🔗 Lien : {loi.LienWeb}", "Fermer");
+            // 1. On affiche les détails et on propose un bouton d'action
+            string action = await DisplayActionSheetAsync(
+                $"⚖️ {loi.Article}\n\n{loi.Titre}\n\n{loi.Description}\n\nPeine : {loi.Peine}",
+                "Fermer",          // Bouton d'annulation
+                null,              // Pas de bouton de destruction
+                "🌐 Ouvrir le lien officiel" // Bouton d'action
+            );
+
+            // 2. Si l'utilisateur clique sur le bouton d'action, on ouvre le navigateur
+            if (action == "🌐 Ouvrir le lien officiel")
+            {
+                try
+                {
+                    //  Cette ligne ouvre le navigateur du téléphone (Chrome, Safari, etc.)
+                    await Browser.Default.OpenAsync(loi.LienWeb, BrowserLaunchMode.SystemPreferred);
+                }
+                catch (Exception ex)
+                {
+                    await DisplayAlertAsync("Erreur", $"Impossible d'ouvrir le navigateur : {ex.Message}", "OK");
+                }
+            }
         }
     }
 }
