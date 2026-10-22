@@ -1,0 +1,66 @@
+[
+  {
+    "Nom": "Numéro d'Urgence Universel",
+    "Numero": "112",
+    "Description": "Numéro gratuit accessible depuis tout opérateur (MTN, Orange, Nextel, Camtel). Redirige vers Police, Gendarmerie ou SAMU selon la situation.",
+    "Type": "Général",
+    "Disponibilite": "24h/24 - 7j/7",
+    "Icone": "phone_alert"
+  },
+  {
+    "Nom": "Police (Sûreté Nationale)",
+    "Numero": "13",
+    "Description": "Sûreté Nationale du Cameroun. Intervention en zone urbaine pour flagrant délit, agression, vol.",
+    "Type": "Sécurité",
+    "Disponibilite": "24h/24 - 7j/7",
+    "Icone": "police_badge"
+  },
+  {
+    "Nom": "Gendarmerie Nationale",
+    "Numero": "117",
+    "Description": "Intervention en zone péri-urbaine, rurale et sur les routes. Brigades territoriales.",
+    "Type": "Sécurité",
+    "Disponibilite": "24h/24 - 7j/7",
+    "Icone": "gendarmerie"
+  },
+  {
+    "Nom": "SAMU",
+    "Numero": "119",
+    "Description": "Service d'Aide Médicale d'Urgence. Intervention médicale rapide, transport à l'hôpital.",
+    "Type": "Santé",
+    "Disponibilite": "24h/24 - 7j/7",
+    "Icone": "medical"
+  },
+  {
+    "Nom": "Pompiers",
+    "Numero": "118",
+    "Description": "Brigade des sapeurs-pompiers. Incendies, accidents, sauvetages.",
+    "Type": "Secours",
+    "Disponibilite": "24h/24 - 7j/7",
+    "Icone": "fire"
+  },
+  {
+    "Nom": "Numéro Vert MINPROFF",
+    "Numero": "1510",
+    "Description": "Centre d'écoute gratuit du Ministère de la Promotion de la Femme et de la Famille. Orientation juridique, psychologique et sociale pour femmes et enfants victimes de VBG.",
+    "Type": "VBG",
+    "Disponibilite": "24h/24 - 7j/7",
+    "Icone": "shield"
+  },
+  {
+    "Nom": "Ligne d'Assistance Enfants",
+    "Numero": "116",
+    "Description": "Child Helpline Cameroun. Numéro gratuit pour enfants en détresse, maltraités ou en danger. Géré avec le soutien de l'UNICEF.",
+    "Type": "Enfance",
+    "Disponibilite": "24h/24 - 7j/7",
+    "Icone": "child"
+  },
+  {
+    "Nom": "Croix-Rouge Camerounaise",
+    "Numero": "+237 222 23 23 23",
+    "Description": "Assistance humanitaire, soutien psychologique, premiers secours.",
+    "Type": "Humanitaire",
+    "Disponibilite": "Lun-Ven 8h-17h",
+    "Icone": "red_cross"
+  }
+]

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlerteViolence.Views.LoisPage"
+             xmlns:vm="clr-namespace:AlerteViolence.ViewModels"
+             xmlns:models="clr-namespace:AlerteViolence.Models"
+             x:DataType="vm:LoisViewModel"
+             BackgroundColor="{StaticResource BackgroundDark}"
+             Title="À propos des droits">
+
+    <Grid RowDefinitions="Auto, Auto, Auto, *" Padding="16">
+
+        <!-- Titre de la page -->
+        <Label Grid.Row="0"
+               Text="Connaître ses droits"
+               Style="{StaticResource TitrePage}"
+               Margin="0,0,0,16"/>
+
+        <!-- Barre de recherche -->
+        <Frame Grid.Row="1"
+               BackgroundColor="{StaticResource SurfaceDark}"
+               CornerRadius="8"
+               Padding="8"
+               Margin="0,0,0,8">
+            <Grid ColumnDefinitions="Auto, *" ColumnSpacing="8">
+                <Image Grid.Column="0"
+                       Source="search.png"
+                       WidthRequest="24"
+                       HeightRequest="24"
+                       VerticalOptions="Center"/>
+                <Entry Grid.Column="1"
+                       Placeholder="Rechercher un article, un mot-clé..."
+                       Text="{Binding SearchText}"
+                       TextColor="{StaticResource TextPrimary}"
+                       PlaceholderColor="{StaticResource TextSecondary}"
+                       BackgroundColor="Transparent"
+                       VerticalOptions="Center"/>
+            </Grid>
+        </Frame>
+
+        <!-- Filtre par catégorie -->
+        <Frame Grid.Row="2"
+               BackgroundColor="{StaticResource SurfaceDark}"
+               CornerRadius="8"
+               Padding="8"
+               Margin="0,0,0,16">
+            <Grid ColumnDefinitions="Auto, *" ColumnSpacing="8">
+                <Label Grid.Column="0"
+                       Text="Catégorie :"
+                       TextColor="{StaticResource TextSecondary}"
+                       VerticalOptions="Center"/>
+                <Picker Grid.Column="1"
+                        ItemsSource="{Binding Categories}"
+                        SelectedItem="{Binding SelectedCategorie}"
+                        TextColor="{StaticResource PrimaryYellow}"
+                        BackgroundColor="Transparent"/>
+            </Grid>
+        </Frame>
+
+        <!-- Liste des lois -->
+        <CollectionView Grid.Row="3"
+                        ItemsSource="{Binding Lois}"
+                        SelectionMode="None">
+
+            <!-- Indicateur de chargement -->
+            <CollectionView.EmptyView>
+                <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="16">
+                    <ActivityIndicator IsRunning="{Binding IsLoading}"
+                                       Color="{StaticResource PrimaryYellow}"/>
+                    <Label Text="Aucune loi ne correspond à votre recherche."
+                           TextColor="{StaticResource TextSecondary}"
+                           HorizontalTextAlignment="Center"
+                           IsVisible="{Binding IsLoading, Converter={StaticResource InvertedBoolConverter}}"/>
+                </VerticalStackLayout>
+            </CollectionView.EmptyView>
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Loi">
+                    <Frame BackgroundColor="{StaticResource SurfaceDark}"
+                           CornerRadius="8"
+                           Padding="16"
+                           Margin="0,0,0,8">
+
+                        <VerticalStackLayout Spacing="8">
+
+                            <!-- En-tête : Article + Catégorie -->
+                            <Grid ColumnDefinitions="*, Auto" ColumnSpacing="8">
+                                <Label Grid.Column="0"
+                                       Text="{Binding Article}"
+                                       FontFamily="IstokWebBold"
+                                       FontSize="18"
+                                       TextColor="{StaticResource PrimaryYellow}"
+                                       VerticalOptions="Center"/>
+                                <Frame Grid.Column="1"
+                                       BackgroundColor="{StaticResource PrimaryRed}"
+                                       CornerRadius="4"
+                                       Padding="8,4">
+                                    <Label Text="{Binding Categorie}"
+                                           FontSize="12"
+                                           TextColor="White"
+                                           VerticalOptions="Center"/>
+                                </Frame>
+                            </Grid>
+
+                            <!-- Titre -->
+                            <Label Text="{Binding Titre}"
+                                   FontFamily="IstokWebBold"
+                                   FontSize="16"
+                                   TextColor="{StaticResource TextPrimary}"/>
+
+                            <!-- Description -->
+                            <Label Text="{Binding Description}"
+                                   FontSize="14"
+                                   TextColor="{StaticResource TextSecondary}"
+                                   LineBreakMode="WordWrap"/>
+
+                            <!-- Peine -->
+                            <Frame BackgroundColor="Transparent"
+                                   BorderColor="{StaticResource PrimaryGreen}"
+                                   CornerRadius="4"
+                                   Padding="8">
+                                <Label>
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="⚖️ Peine : " 
+                                                  FontAttributes="Bold"
+                                                  TextColor="{StaticResource PrimaryGreen}"/>
+                                            <Span Text="{Binding Peine}"
+                                                  TextColor="{StaticResource TextPrimary}"/>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Frame>
+
+                            <!-- Lien web (si disponible) -->
+                            <Button Text="📖 En savoir plus en ligne"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type vm:LoisViewModel}}, Path=OpenLienWebCommand}"
+                                    CommandParameter="{Binding .}"
+                                    BackgroundColor="Transparent"
+                                    BorderColor="{StaticResource PrimaryYellow}"
+                                    BorderWidth="1"
+                                    TextColor="{StaticResource PrimaryYellow}"
+                                    FontSize="14"
+                                    HeightRequest="40"
+                                    CornerRadius="8"
+                                    IsVisible="{Binding LienWeb, Converter={StaticResource StringNotEmptyConverter}}"/>
+
+                        </VerticalStackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+    </Grid>
+</ContentPage>
