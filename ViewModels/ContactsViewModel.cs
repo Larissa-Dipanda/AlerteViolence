@@ -23,7 +23,7 @@ public partial class ContactsViewModel : ObservableObject
     {
         if (parameter is ContactUrgence contact)
         {
-            // CORRECTION : DisplayAlert (sans "Async" à la fin)
+            
             bool wantToCall = await Shell.Current.DisplayAlertAsync(
                 contact.Nom,
                 $"Numéro : {contact.Numero}\nDomaine : {contact.Domaine}\n\n{contact.Description}\n\nVoulez-vous composer ce numéro ?",
@@ -35,7 +35,9 @@ public partial class ContactsViewModel : ObservableObject
                 try
                 {
                     // Ouvre le composeur téléphonique du smartphone
-                    PhoneDialer.Default.Open(contact.Numero);
+                    // Nettoie le numéro en supprimant les espaces et les tirets
+                    string numeroPropre = contact.Numero.Replace(" ", "").Replace("-", "");
+                    PhoneDialer.Default.Open(numeroPropre);
                 }
                 catch (FeatureNotSupportedException)
                 {

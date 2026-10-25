@@ -8,12 +8,27 @@ public class DataService
     {
         return new List<Loi>
         {
-            new Loi { Article = "Art. 263", Titre = "Coups et blessures volontaires", Description = "Toute violence exercée contre une personne sans incapacité de travail.", Peine = "6 jours à 5 ans et amende.", LienWeb = "https://www.minjustice.gov.cm" },
-            new Loi { Article = "Art. 264", Titre = "Coups et blessures aggravés", Description = "Sur conjoint, enfant, personne vulnérable, ou avec arme.", Peine = "5 à 10 ans de prison.", LienWeb = "https://www.minjustice.gov.cm" },
-            new Loi { Article = "Art. 293", Titre = "Viol", Description = "Tout acte de pénétration sexuelle commis sur autrui sans consentement.", Peine = "15 à 20 ans de prison.", LienWeb = "https://www.minjustice.gov.cm" },
-            new Loi { Article = "Art. 295", Titre = "Agression sexuelle", Description = "Tout acte sexuel sans pénétration imposé sans consentement.", Peine = "5 à 10 ans de prison.", LienWeb = "https://www.minjustice.gov.cm" },
-            new Loi { Article = "Art. 332", Titre = "Menaces de mort", Description = "Menaces répétées de mort, de violences ou d'attentat.", Peine = "1 à 3 ans de prison et amende.", LienWeb = "https://www.minjustice.gov.cm" },
-            new Loi { Article = "Art. 345", Titre = "Mariage forcé", Description = "Contrainte physique ou morale pour forcer une personne à se marier.", Peine = "1 à 5 ans de prison et amende.", LienWeb = "https://www.minjustice.gov.cm" }
+            // VIOLENCES PHYSIQUES
+            new Loi { Article = "Art. 263", Titre = "Coups et blessures volontaires", Description = "Toute violence exercée contre une personne sans incapacité de travail.", Peine = "6 jours à 5 ans et amende.", LienWeb = "https://lex.cameroun.cc/fr/cm/loi-n-2019020-du-24-d-cembre-2019-modifiant-et-compl-tant-certaines-dispositions-de-la-loi", Categorie = "Violences Physiques" },
+            new Loi { Article = "Art. 264", Titre = "Coups et blessures aggravés", Description = "Sur conjoint, enfant, personne vulnérable, ou avec arme.", Peine = "5 à 10 ans de prison.", LienWeb = "http://www.minjustice.gov.cm/index.php/fr/legalis/accueil-legalis", Categorie = "Violences Physiques" },
+            new Loi { Article = "Art. 266", Titre = "Mutilation", Description = "Ablation ou mutilation d'un membre ou organe génital (y compris l'excision).", Peine = "10 à 20 ans de prison.", LienWeb = "https://rflgd.org/cameroun/", Categorie = "Violences Physiques" },
+
+            // VIOLENCES SEXUELLES
+            new Loi { Article = "Art. 293", Titre = "Viol", Description = "Tout acte de pénétration sexuelle commis sur autrui sans consentement.", Peine = "15 à 20 ans de prison.", LienWeb = "https://album-social.com/2026/09/29/cameroun-violences-femmes-code-penal/", Categorie = "Violences Sexuelles" },
+            new Loi { Article = "Art. 295", Titre = "Agression sexuelle", Description = "Tout acte sexuel sans pénétration imposé sans consentement.", Peine = "5 à 10 ans de prison.", LienWeb = "https://album-social.com/2026/09/29/cameroun-violences-femmes-code-penal/", Categorie = "Violences Sexuelles" },
+
+            // MENACES ET HARCÈLEMENT
+            new Loi { Article = "Art. 332", Titre = "Menaces de mort ou de violences", Description = "Menaces répétées de mort, de violences ou d'attentat.", Peine = "1 à 3 ans de prison et amende.", LienWeb = "https://moukourilaw.com/cyberharcelement-et-haine-en-ligne-la-repression-du-cameroun/", Categorie = "Menaces et Harcèlement" },
+            new Loi { Article = "Art. 334", Titre = "Chantage", Description = "Menace de révéler des informations sensibles pour obtenir quelque chose.", Peine = "1 à 5 ans de prison et amende.", LienWeb = "https://album-social.com/2026/09/29/cameroun-violences-femmes-code-penal/", Categorie = "Menaces et Harcèlement" },
+
+            // PROTECTION DE L'ENFANCE
+            new Loi { Article = "Art. 336", Titre = "Abandon de mineur", Description = "Abandon d'un enfant de moins de 15 ans dans un lieu non sûr.", Peine = "1 à 5 ans de prison.", LienWeb = "https://clr.africanchildforum.org/", Categorie = "Protection de l'Enfance" },
+
+            // MARIAGES FORCÉS ET ENLÈVEMENT
+            new Loi { Article = "Art. 345", Titre = "Mariage forcé", Description = "Contrainte physique ou morale pour forcer une personne à se marier.", Peine = "1 à 5 ans de prison et amende.", LienWeb = "https://www.ohchr.org/sites/default/files/Documents/Issues/Women/WRGS/Earlyforcedmarriage/SG/Cameroon.pdf", Categorie = "Mariages Forcés et Enlèvement" },
+
+            // NON-ASSISTANCE ET DIGNITÉ
+            new Loi { Article = "Art. 144", Titre = "Non-assistance à personne en danger", Description = "Ne pas porter secours à une personne en péril lorsqu'on peut le faire sans risque.", Peine = "6 mois à 5 ans et amende.", LienWeb = "http://www.minjustice.gov.cm/index.php/fr/legalis/textes-de-lois", Categorie = "Non-Assistance et Dignité" }
         };
     }
 

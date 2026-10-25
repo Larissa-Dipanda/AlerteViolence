@@ -1,8 +1,11 @@
 ﻿using System.Collections.ObjectModel;
+using System.Linq; //  INDISPENSABLE pour les méthodes .Where() et .AsEnumerable()
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using AlerteViolence.Models;
 using AlerteViolence.Services;
+using Microsoft.Maui.ApplicationModel;
+using Microsoft.Maui.Devices;
 
 namespace AlerteViolence.ViewModels;
 
@@ -12,16 +15,16 @@ public partial class LoisViewModel : ObservableObject
     private List<Loi> _allLois = new();
 
     [ObservableProperty]
-    private ObservableCollection<Loi> lois = new();
+    private ObservableCollection<Loi> _lois = new();
 
     [ObservableProperty]
-    private string searchText = string.Empty;
+    private string _searchText = string.Empty;
 
     [ObservableProperty]
-    private string selectedCategorie = "Toutes";
+    private string _selectedCategorie = "Toutes";
 
     [ObservableProperty]
-    private bool isLoading = true;
+    private bool _isLoading = true;
 
     public List<string> Categories { get; } = new()
     {
@@ -45,7 +48,7 @@ public partial class LoisViewModel : ObservableObject
         try
         {
             IsLoading = true;
-            _allLois = await _dataService.GetLoisAsync();
+            _allLois = _dataService.GetLoisCamerounaises();
             FilterLois();
         }
         catch (Exception ex)
@@ -58,21 +61,16 @@ public partial class LoisViewModel : ObservableObject
         }
     }
 
-    /// <summary>
-    /// Applique les filtres (recherche + catégorie) sur la liste des lois
-    /// </summary>
     [RelayCommand]
     private void FilterLois()
     {
         var filtered = _allLois.AsEnumerable();
 
-        // Filtre par catégorie
         if (SelectedCategorie != "Toutes")
         {
             filtered = filtered.Where(l => l.Categorie == SelectedCategorie);
         }
 
-        // Filtre par recherche (titre, article, description)
         if (!string.IsNullOrWhiteSpace(SearchText))
         {
             var searchLower = SearchText.ToLower();
@@ -89,25 +87,9 @@ public partial class LoisViewModel : ObservableObject
         }
     }
 
-    /// <summary>
-    /// Déclenché automatiquement quand SearchText change
-    /// </summary>
-    partial void OnSearchTextChanged(string value)
-    {
-        FilterLois();
-    }
+    partial void OnSearchTextChanged(string value) => FilterLois();
+    partial void OnSelectedCategorieChanged(string value) => FilterLois();
 
-    /// <summary>
-    /// Déclenché automatiquement quand SelectedCategorie change
-    /// </summary>
-    partial void OnSelectedCategorieChanged(string value)
-    {
-        FilterLois();
-    }
-
-    /// <summary>
-    /// Ouvre le lien web de la loi dans le navigateur
-    /// </summary>
     [RelayCommand]
     private async Task OpenLienWeb(Loi loi)
     {
@@ -117,8 +99,7 @@ public partial class LoisViewModel : ObservableObject
             return;
         }
 
-        // Vérifie la connexion internet
-        if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+        if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
         {
             await Shell.Current.DisplayAlertAsync("Pas de connexion", "Vous devez être connecté à Internet pour accéder à cette page.", "OK");
             return;
@@ -128,9 +109,9 @@ public partial class LoisViewModel : ObservableObject
         {
             await Browser.Default.OpenAsync(loi.LienWeb, BrowserLaunchMode.SystemPreferred);
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            await Shell.Current.DisplayAlertAsync("Erreur", $"Impossible d'ouvrir le lien : {ex.Message}", "OK");
+            await Shell.Current.DisplayAlertAsync("Erreur", "Impossible d'ouvrir le lien.", "OK");
         }
     }
 }

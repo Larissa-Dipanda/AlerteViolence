@@ -1,5 +1,3 @@
-//using static Android.Icu.Text.UnicodeSet;
-
 namespace AlerteViolence.Views;
 
 public partial class LaunchingPage : ContentPage
@@ -12,11 +10,7 @@ public partial class LaunchingPage : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
-
-        // Attend 1 seconde pour simuler le chargement
-        await Task.Delay(200);
-
-        // Redirige vers l'écran EntryPage
+        await Task.Delay(2000); // 2 secondes pour voir le logo
         await Shell.Current.GoToAsync(nameof(EntryPage));
     }
 }

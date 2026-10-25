@@ -1,6 +1,4 @@
-﻿using AlerteViolence.Views;
-
-namespace AlerteViolence;
+﻿namespace AlerteViolence;
 
 public partial class App : Application
 {
@@ -11,18 +9,27 @@ public partial class App : Application
 
     protected override Window CreateWindow(IActivationState? activationState)
     {
-        //  Vérifie si l'utilisateur a déjà validé une connexion/inscription
-        bool isLoggedIn = Preferences.Default.Get("IsLoggedIn", false);
+        // 1. On crée le Shell et la Fenêtre
+        var shell = new AppShell();
+        var window = new Window(shell);
 
-        if (isLoggedIn)
+        // 2. On attend que le Shell soit COMPLÈTEMENT chargé avant de naviguer
+        shell.Loaded += (s, e) =>
         {
-            // Si oui, on va directement à l'AppShell (qui affiche la TabBar et SosReportPage)
-            return new Window(new AppShell());
-        }
-        else
-        {
-            // Sinon, on affiche l'écran de lancement classique
-            return new Window(new LaunchingPage());
-        }
+            bool isLoggedIn = Preferences.Default.Get("IsLoggedIn", false);
+
+            if (isLoggedIn)
+            {
+                // Si connecté, on va directement à la barre d'onglets
+                Shell.Current.GoToAsync("//MainTabBar");
+            }
+            else
+            {
+                // Sinon, on affiche l'écran de lancement
+                Shell.Current.GoToAsync("//LaunchingPage");
+            }
+        };
+
+        return window;
     }
 }

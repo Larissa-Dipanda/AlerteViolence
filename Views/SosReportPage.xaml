@@ -14,10 +14,10 @@
                 TextColor="{StaticResource TextMuted}" 
                 FontSize="12" 
                 HorizontalOptions="End" 
-                Margin="0,0,0,8"/>
+                Margin="0,0,0,2"/>
 
             <!-- En-tête dynamique -->
-            <VerticalStackLayout Spacing="4" Margin="0,16,0,24">
+            <VerticalStackLayout Spacing="4" Margin="0,8,0,24">
                 <Label Text="Bonjour !" FontFamily="IstokWebBold" FontSize="24" TextColor="White"/>
 
                 <!-- Liaison avec la propriété UserName du ViewModel -->

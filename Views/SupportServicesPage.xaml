@@ -25,7 +25,6 @@
                         <VerticalStackLayout.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnStructureClicked" CommandParameter="{Binding .}" />
                         </VerticalStackLayout.GestureRecognizers>
-
                     </VerticalStackLayout>
                 </Border>
             </DataTemplate>

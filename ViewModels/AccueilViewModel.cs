@@ -1,106 +1,55 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Microsoft.Maui.Devices;
-using AlerteViolence.Views;
+using AlerteViolence.Models;
+using AlerteViolence.Services;
 
 namespace AlerteViolence.ViewModels;
 
 public partial class AccueilViewModel : ObservableObject
 {
+    private readonly AlerteService _alerteService;
+
+    //  Les propriétés sont générées automatiquement avec une MAJUSCULE (NatureMessage, Priorite, Description)
     [ObservableProperty]
-    private string natureMessage;
+    private string _natureMessage = string.Empty;
 
     [ObservableProperty]
-    private string priorite;
+    private string _priorite = string.Empty;
 
     [ObservableProperty]
-    private string description;
-
-    public bool IsEnvoiEnCours { get; set; }
-
-    public List<string> NaturesMessage { get; } = new()
-    {
-        "Situation personnelle",
-        "Témoignage",
-        "Demande d'information",
-        "Autre"
-    };
-
-    public List<string> Priorites { get; } = new()
-    {
-        "Normale",
-        "Importante",
-        "Urgente"
-    };
+    private string _description = string.Empty;
 
     public AccueilViewModel()
     {
-        // Initialisation des valeurs par défaut
-        natureMessage = string.Empty;
-        priorite = string.Empty;
-        description = string.Empty;
-        IsEnvoiEnCours = false;
+        _alerteService = new AlerteService();
     }
 
     [RelayCommand]
-    private async Task EnvoyerAlerteAsync()
+    private async Task SoumettreRapportAsync()
     {
-        if (string.IsNullOrWhiteSpace(natureMessage) ||
-            string.IsNullOrWhiteSpace(priorite) ||
-            string.IsNullOrWhiteSpace(description))
+        //  Utilisez NatureMessage, Priorite, Description (pas _natureMessage, etc.)
+        if (string.IsNullOrWhiteSpace(NatureMessage) || string.IsNullOrWhiteSpace(Priorite) || string.IsNullOrWhiteSpace(Description))
         {
-            await Shell.Current.DisplayAlertAsync("Information requise", "Veuillez remplir tous les champs.", "OK");
+            await Shell.Current.DisplayAlertAsync("Erreur", "Veuillez remplir tous les champs.", "OK");
             return;
         }
 
-        IsEnvoiEnCours = true;
-
-        try
+        var rapport = new Rapport
         {
-            await Task.Delay(500);
+            Numero = "112", // Ou logique dynamique
+            Type = NatureMessage,
+            Statut = Priorite,
+            Date = DateTime.Now,
+            Description = Description
+        };
 
-            if (DeviceInfo.Platform != DevicePlatform.WinUI)
-            {
-                Vibration.Default.Vibrate(TimeSpan.FromMilliseconds(200));
-            }
+        await _alerteService.SaveRapportAsync(rapport);
 
-            await Shell.Current.DisplayAlertAsync("Envoyé", "Votre message a été transmis.", "OK");
+        await Shell.Current.DisplayAlertAsync("Succès", "Rapport envoyé et sauvegardé !", "OK");
 
-            natureMessage = string.Empty;
-            priorite = string.Empty;
-            description = string.Empty;
-        }
-        catch (Exception ex)
-        {
-            await Shell.Current.DisplayAlertAsync("Erreur", ex.Message, "OK");
-        }
-        finally
-        {
-            IsEnvoiEnCours = false;
-        }
-    }
-
-    [RelayCommand]
-    private async Task EffacementRapideAsync()
-    {
-        if (DeviceInfo.Platform != DevicePlatform.WinUI)
-        {
-            Vibration.Default.Vibrate(TimeSpan.FromMilliseconds(100));
-        }
-
-        natureMessage = string.Empty;
-        priorite = string.Empty;
-        description = string.Empty;
-
-        await Shell.Current.GoToAsync(nameof(CalculatricePage));
-    }
-
-    [RelayCommand]
-    private async Task NaviguerVersLoisAsync()
-    {
-        await Shell.Current.GoToAsync(nameof(LoisPage));
+        // Réinitialisation des champs avec les propriétés générées
+        NatureMessage = string.Empty;
+        Priorite = string.Empty;
+        Description = string.Empty;
     }
 }
